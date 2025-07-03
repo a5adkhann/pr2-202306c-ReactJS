@@ -1,25 +1,29 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
 import Home from './pages/Home'
 import About from './pages/About'
 import Services from './pages/Services'
 import Contact from './pages/Contact'
+import Register from './pages/Register'
+import Login from './pages/Login'
+import AppLayout from './AppLayout'
 
 const App = () => {
   return (
     <>
-        <BrowserRouter>
-              <Navbar/>
-              <Routes>
-                  <Route path="/" element={<Home/>}></Route>
-                  <Route path="/about" element={<About/>}></Route>
-                  <Route path="/services" element={<Services/>}></Route>
-                  <Route path="/contact" element={<Contact/>}></Route>
-              </Routes>
-              <Footer/>
-        </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+
+          <Route path='/' element={<AppLayout />}>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/about" element={<About />}></Route>
+            <Route path="/services" element={<Services />}></Route>
+            <Route path="/contact" element={<Contact />}></Route>
+          </Route>
+          <Route path="/register" element={<Register />}></Route>
+          <Route path="/login" element={<Login />}></Route>
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }

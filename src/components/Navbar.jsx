@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
@@ -10,9 +11,18 @@ const Navbar = () => {
           </div>
           <div id='navbar-items'>
             <ul className='md:flex hidden gap-5'>
-              <li>Home</li>
-              <li>Categories</li>
-              <li>Products</li>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/about">About</Link>
+              </li>
+              <li>
+                <Link to="/services">Services</Link>
+              </li>
+              <li>
+                <Link to="/contact">Contact</Link>
+              </li>
             </ul>
           </div>
           <div id='navbar-toggle' className='md:invisible visible'>
