@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const Navbar = () => {
+
+  const [toggle, setToggle] = useState(false);
+
+  const handleToggle = () => {
+    setToggle(!toggle);
+    console.log(toggle);
+  }
+
+
   return (
     <>
       
@@ -25,9 +34,16 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <div id='navbar-toggle' className='md:invisible visible'>
+          <div id='navbar-toggle' className='md:invisible visible' onClick={handleToggle}>
             <i className="ri-menu-line"></i>
           </div>
+      </div>
+
+      <div className={` ${toggle ? "block" : "hidden"}  mobile-navbar bg-slate-900 text-white text-center leading-10 md:hidden`}>
+          <p><Link to="/">Home</Link></p>
+          <p><Link to="/about">About</Link></p>
+          <p><Link to="/services">Services</Link></p>
+          <p><Link to="/contact">Contact</Link></p>
       </div>
 
     </>
