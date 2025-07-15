@@ -1,7 +1,26 @@
-import React from 'react'
-import cards from '../data/Cards'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
+// import cards from '../data/Cards'
 
 const DataCards = () => {
+
+    const [cards, setCards] = useState([]);
+
+    const fetchCardsAPI = async() => {
+        try {
+            const response = await axios.get("https://fakestoreapi.com/products");
+            console.log(response.data);
+            setCards(response.data);
+        }
+        catch(err){
+            console.log("Error Loading API Products", err);
+        }
+    }
+
+    useEffect(() => {
+        fetchCardsAPI();
+    }, []);
+
 
   return (
     <>
@@ -10,11 +29,11 @@ const DataCards = () => {
             {cards.map((card, index) => (
             <div className="card border border-gray-300 hover:scale-105 transition-transform duration-300 ease-in-out" key={index}>
                 <div className="card-img">
-                    <img src={card.card_img} alt="" />
+                    <img className='h-[30vh] w-[100%]' src={card.image} alt="" />
                 </div>
                 <div className="card-text p-3">
-                    <p className='font-bold text-xl'>{card.card_title}</p>
-                    <p className='text-sm'>{card.card_description}</p>
+                    <p className='font-bold text-xl'>{card.title}</p>
+                    <p className='text-sm'>{card.description.substring(0, 50)+"..."}</p>
                 </div>
             </div>
             ))}
