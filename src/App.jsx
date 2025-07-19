@@ -7,10 +7,13 @@ import Contact from './pages/Contact'
 import Register from './pages/Register'
 import Login from './pages/Login'
 import AppLayout from './AppLayout'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const App = () => {
   return (
     <>
+      {AOS.init()}
       <BrowserRouter>
         <Routes>
 

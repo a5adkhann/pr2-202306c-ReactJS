@@ -24,7 +24,7 @@ const DataCards = () => {
 
   return (
     <>
-        <div className='data-cards grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10 p-20'>
+        <div className='data-cards grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10 p-20' data-aos="flip-left" data-aos-duration="3000">
 
             {cards.slice(0, 3).map((card, index) => (
             <div className="card border border-gray-300 hover:scale-105 transition-transform duration-300 ease-in-out" key={index}>
