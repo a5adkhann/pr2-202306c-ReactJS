@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import ThemeSwitcher from './ThemeSwitcher';
 
 const Navbar = () => {
 
@@ -36,6 +37,10 @@ const Navbar = () => {
           </div>
           <div id='navbar-toggle' className='md:invisible visible' onClick={handleToggle}>
             <i className="ri-menu-line"></i>
+          </div>
+
+          <div>
+            <ThemeSwitcher/>
           </div>
       </div>
 

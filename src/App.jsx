@@ -9,10 +9,12 @@ import Login from './pages/Login'
 import AppLayout from './AppLayout'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import ThemeProvider from './components/ThemeContext'
 
-const App = () => {
+const ThemedApp = () => {
   return (
     <>
+
       {AOS.init()}
       <BrowserRouter>
         <Routes>
@@ -27,8 +29,18 @@ const App = () => {
           <Route path="/login" element={<Login />}></Route>
         </Routes>
       </BrowserRouter>
+      
     </>
   )
 }
+
+const App = () => {
+  return(
+    <ThemeProvider>
+      <ThemedApp/>
+    </ThemeProvider>
+  )
+}
+
 
 export default App
