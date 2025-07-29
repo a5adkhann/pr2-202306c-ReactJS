@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import About from './pages/About'
@@ -12,9 +12,9 @@ import 'aos/dist/aos.css';
 import ThemeProvider from './components/ThemeContext'
 
 const ThemedApp = () => {
+
   return (
     <>
-
       {AOS.init()}
       <BrowserRouter>
         <Routes>
@@ -29,7 +29,6 @@ const ThemedApp = () => {
           <Route path="/login" element={<Login />}></Route>
         </Routes>
       </BrowserRouter>
-      
     </>
   )
 }

@@ -20,7 +20,7 @@ const ThemeSwitcher = () => {
         {theme === "light" ?
         <i onClick={handleTheme} className="ri-moon-line text-xl"></i>
             :
-            <i onClick={handleTheme} className="ri-sun-line text-xl"></i>
+        <i onClick={handleTheme} className="ri-sun-line text-xl"></i>
         }
 
         

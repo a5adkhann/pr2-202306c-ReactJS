@@ -1,8 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import ThemeSwitcher from './ThemeSwitcher';
+import { ThemeContext } from './ThemeContext';
 
 const Navbar = () => {
+
+  const {theme} = useContext(ThemeContext);
 
   const [toggle, setToggle] = useState(false);
 
@@ -15,7 +18,7 @@ const Navbar = () => {
   return (
     <>
       
-      <div className='desktop-navbar bg-slate-900 text-white flex justify-between p-3 items-center'>
+      <div className={` ${theme === "light" ? 'bg-slate-900 text-white' : 'bg-black text-white'}   desktop-navbar flex justify-between p-3 items-center`}>
           <div id='navbar-logo' className='text-xl'>
               <i className="ri-behance-fill"></i>
           </div>
